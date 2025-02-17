@@ -35,7 +35,7 @@ myPromise
 // Finally hər halda işləyir.
 ```
 
-### 8.Javascript-də for..in döngəsi ilə for..of döngəsi arasında fərq nədir?
+### 8. Javascript-də for..in döngəsi ilə for..of döngəsi arasında fərq nədir?
 
 **Cavab:**
 
@@ -57,12 +57,12 @@ for (let value of arr) {
 }
 ```
 
-### 9.Javascript-də ox funksiyası ilə regular funksiya arasındakı fərq nədir
+### 9. Javascript-də ox funksiyası ilə regular funksiya arasındakı fərq nədir
 
 **Cavab:**
 Ox funksiyalarının daha qısa sintaksisi vardır və `this` dəyərini avtomatik olaraq daxil olduğu kontekstə bağlayır, regular funksiyalar isə daha uzun sintaksiyaya malikdir və `this` dəyəri funksiyanın necə çağırılmasından asılı olaraq təyin olunur.
 
-### 10.Javascript-də var, let və const arasındakı fərq nədir?
+### 10. Javascript-də var, let və const arasındakı fərq nədir?
 
 **Cavab:** var funksional (function) scope-da təyin olunur, amma let və const blok (block) scope-da təyin olunur. var və let dəyişənləri yenidən təyin edilə bilər, amma const yenidən təyin edilə bilməz. Bundan əlavə, const təyin edildiyi zaman mütləq başlanğıc dəyəri ilə təyin edilməlidir.
 
@@ -155,7 +155,7 @@ setInterval(() => {
 }, 3000);
 ```
 
-### 17.JavaScript-də this açar sözü nədir?
+### 17. JavaScript-də this açar sözü nədir?
 
 **Cavab:** this açar sözü cari konteksti (mühiti) göstərir, bu da qlobal obyekt, funksiya və ya obyekt ola bilər.
 
@@ -174,4 +174,134 @@ function show() {
   console.log(this); // 'this' qlobal obyektə (brauzerlerde 'window') istinad edir
 }
 show();
+```
+
+### 18. JavaScript-də window və document arasındakı fərq nədir?
+
+**Cavab:** `window` brauzer pəncərəsini təmsil edən qlobal obyektdir, `document` isə pəncərədə göstərilən HTML sənədinə istinad edir.
+
+### 19. JavaScript-də map və forEach arasındakı fərq nədir?
+
+**Cavab:** Həm map, həm də forEach bir massiv üzərində dövr etmək üçün istifadə olunur, amma map transformasiya olunmuş elementlərlə yeni bir massiv qaytarır, forEach isə yalnız hər bir element üzərində funksiyanı icra edir.
+
+```js
+const arr = [1, 2, 3, 4, 5];
+
+// map: Yeni bir massiv qaytarır
+const doubled = arr.map((x) => x * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+
+// forEach: Elementlər üzərində əməliyyat edir, amma heç bir şey qaytarmır
+arr.forEach((x) => console.log(x * 2)); // 2, 4, 6, 8, 10
+```
+
+### 20. JavaScript-də sintaksis səhvi ilə çalışma zamanı (runtime) səhvi arasındakı fərq nədir?
+
+**Cavab:** Sintaksis səhvi, kod düzgün yazılmadıqda yaranır, run time səhvi isə kod icra olunarkən qarşılaşılan problemlərdən qaynaqlanır.
+
+```js
+// Sintaksis Səhvi (Syntax Error)
+console.log("Hello World" // Mötərizə bağlanmayıb
+
+// Çalışma Zamanı Səhvi (Runtime Error)
+let x = 10;
+console.log(x.toUpperCase()); // x bir ədəd olduğu üçün toUpperCase() metodunu çağıra bilməz
+```
+
+### 21. JavaScript-də modul nədir?
+
+**Cavab:** Modul, özünü idarə edən bir kod parçasıdır ki, digər kodlara import edilə və istifadə edilə bilər. Bu, böyük kod bazalarını təşkil etmək və modulyarlaşdırmaq üçün kömək edir.
+
+```js
+// math.js faylı (Modul)
+export function add(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}
+
+// app.js faylı (Modulun istifadə edilməsi)
+import { add, subtract } from './math.js';
+
+console.log(add(2, 3)); // 5
+console.log(subtract(5, 3)); // 2
+```
+
+### 22. JavaScript-də JSON.stringify nə üçün istifadə edilir?
+
+**Cavab:** `JSON.stringify` metodu, JavaScript obyektini JSON formatında mətnə çevirmək üçün istifadə olunur.
+
+### 23. JavaScript-də eval funksiyasının nədir?
+
+**Cavab:** eval funksiyası, cari əhatə dairəsində (scope) JavaScript kodunu ifadə edən bir sətri icra etmək üçün istifadə olunur.
+
+Təhlükəsizlik və performans problemlərinə görə istifadəsi tövsiyə edilmir.
+
+```js
+let x = 10;
+let y = 20;
+let result = eval('x + y'); // 30
+console.log(result);
+```
+
+### 24. JavaScript-də new açar sözü nədir?
+
+**Cavab:** `new` açar sözü bir funksiyanı konstruktor kimi çağıraraq yeni obyekt yaradır. new açar sözü bir funksiyanı konstruktor kimi çağıraraq yeni obyekt yaradır.
+
+### 24. JavaScript-də new açar sözü nədir?
+
+**Cavab:** `new` açar sözü, bir funksiyanı konstruktor kimi çağıraraq yeni bir obyekt yaradır.
+
+### 25. Konstruktor Funksiyalar nədir?
+
+**Cavab:** Konstruktor funksiyalar, obyekt yaratmaq üçün istifadə olunan xüsusi funksiyalardır. Onlar new açar sözü ilə çağırılır və yeni bir obyekt yaradır. Konstruktor funksiyalar, JavaScript-də obyekt yönümlü proqramlaşdırmanın (OOP) əsas hissəsidir. Bu funksiyalar adətən böyük hərflə başlayır (məsələn, Car, Person).
+
+### 26. JavaScript-də primitiv dəyərlər və referans dəyərlər arasındakı fərq nədir?
+
+**Cavab:** Primitiv dəyərlər dəyişməz (immutable) və birbaşa yaddaşda saxlanılır, referans dəyərlər isə dəyişən (mutable) obyektlərdir və yaddaşda referans ilə saxlanılır.
+
+### 27. Object.keys metodu nədir?
+
+**Cavab:** `Object.keys()` metodu bir obyektin yalnız açar (property name) adlarını qaytaran bir massiv yaradır.
+
+```js
+const user = { name: 'Ali', age: 25, city: 'Baku' };
+console.log(Object.keys(user));
+// ["name", "age", "city"]
+```
+
+### 28. JavaScript-də JSON.parse metodu nədir?
+
+**Cavab:** `JSON.parse` metodu, JSON formatında olan bir sətri JavaScript obyektinə çevirmək üçün istifadə olunur.
+
+### 29. extends açar sözü nədir?
+
+**Cavab:** `extends` açar sözü, JavaScript-də mövcud olan bir sinifdən alt sinif yaratmaq üçün istifadə olunur. Bu, kodun təkrar istifadəsini və miras (inheritance) mexanizmini təmin edir.
+
+```js
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, breed) {
+    super(name); // Ana sinifin constructor funksiyasını çağırır
+    this.breed = breed;
+  }
+
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+const dog = new Dog('Max', 'Labrador');
+dog.speak(); // "Max barks."
 ```
