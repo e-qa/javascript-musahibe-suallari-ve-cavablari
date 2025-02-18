@@ -305,3 +305,58 @@ class Dog extends Animal {
 const dog = new Dog('Max', 'Labrador');
 dog.speak(); // "Max barks."
 ```
+
+### 29. JavaScript-də super açar sözü nədir?
+
+**Cavab:** super açar sözü, alt sinifdə (subclass) üst sinfin (superclass) konstruktorunu və ya metodlarını çağırmaq üçün istifadə olunur.
+
+### 30. JavaScript-də Object.create metodu nədir?
+
+**Cavab:** `Object.create` metodunun məqsədi mövcud bir obyektin prototipini istifadə edərək yeni bir obyekt yaratmağa imkan verir.
+
+```js
+const person = {
+  greet() {
+    console.log(`Salam, mənim adım ${this.name}-dir.`);
+  },
+};
+
+// person obyektini prototip kimi istifadə edərək yeni obyekt yaratmaq
+const eli = Object.create(person);
+eli.name = 'Eli';
+eli.greet(); // Salam, mənim adım Eli-dir.
+```
+
+### 31. JavaScript-də Object.assign metodu nədir?
+
+`Object.assign` metodu, obyektlərin xüsusiyyətlərini birləşdirmək, kopyasını yaratmaq və ya yeni xüsusiyyətlər əlavə etmək üçün istifadə olunur.
+
+```js
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const result = Object.assign({}, obj1, obj2); // { a: 1, b: 2 }
+```
+
+### 32. JavaScript-də Object.values ​​metodu nədir?
+
+**Cavab:** `Object.values()` metodu, obyektin dəyərlərini (values) bir massiv olaraq qaytarmaq üçün istifadə olunur.
+
+```js
+const obj = { a: 1, b: 2, c: 3 };
+const values = Object.values(obj);
+console.log(values); // [1, 2, 3]
+```
+
+### 33. JavaScript-də Object.entries ​​metodu nədir?
+
+**Cavab:** `Object.entries` metodu, obyektin içindəki key və value cütlərini bir massiv olaraq qaytarmaq üçün istifadə olunur.
+
+```js
+const obj = { a: 1, b: 2, c: 3 };
+const val = Object.entries(obj);
+console.log(val); // [ ['a', 1], ['b', 2], ['c', 3] ]
+```
+
+### 34. Prototip Nədir?
+
+**Cavab:** JavaScript-də prototype, obyektlərin bir-birindən xüsusiyyət və metod miras almasını təmin edən mexanizmdir.
