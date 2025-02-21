@@ -629,17 +629,32 @@ console.log(mySet.size); // Nəticə: 2 (Set-in ölçüsü)
 
 ### 57. Event loop nədir?
 
-**Cavab:** Event loop JavaScript-də asinxron kodun icrasını idarə edən bir mexanizmdir. Bu mexanizm, əsas thread-in **bloklanmamasını** təmin edir və kodun effektiv şəkildə işləməsini təmin edir. Event loop, call stack, callback queue və microtask queue kimi hissələrdən istifadə edərək asinxron əməliyyatları idarə edir.
+**Cavab:**  Event loop JavaScript-də asinxron kodun icrasını idarə edən bir mexanizmdir. Bu mexanizm, əsas thread-in bloklanmamasını təmin edir və kodun effektiv şəkildə işləməsini təmin edir. Event loop, call stack, callback queue və microtask queue kimi hissələrdən istifadə edərək asinxron əməliyyatları idarə edir.
 
-1. Call Stack: Sinxron əməliyyatlar burada icra olunur. Hər dəfə funksiya çağırıldıqda, bu funksiya call stack-ə əlavə olunur və icra edildikdən sonra stack-dən çıxarılır.
+🔹 Call Stack:
 
-2. Web APIs: Asinxron əməliyyatlar (məsələn, setTimeout, fetch, DOM hadisələri) burada icra olunur. Web API-lər işə düşərkən nəticəni Call Stack-ə yönləndirmək üçün bir yerdə saxlayır.
+    Burada sinxron əməliyyatlar icra olunur.
+    Funksiya çağırıldıqda Call Stack-ə əlavə olunur və icrası bitdikdə stack-dən çıxarılır.
 
-3. Microtask Queue: Microtasks (məsələn, Promise callback-ləri və MutationObserver) burada toplanır. Web API-lər tamamlandıqdan sonra bu queue-dən tapşırıqlar Call Stack-ə keçirilməlidir.
+🔹 Web APIs:
 
-4. Callback Queue (Macrotask Queue): Macrotasks (məsələn, setTimeout, setInterval callback-ləri) burada toplanır. Microtasks tamamlandıqdan sonra, Event Loop macrotasks-ları icra edir.
+    Asinxron əməliyyatlar (məsələn, setTimeout, fetch, DOM hadisələri) burada icra olunur.
+    Bu əməliyyatlar tamamlandıqda müvafiq callback Microtask Queue və ya Macrotask Queue-ya əlavə olunur.
 
-5. Event Loop: Call Stack boşaldıqda, Event Loop əvvəlcə Microtask Queue-dən bütün tapşırıqları (tasks) icra edir, sonra Callback Queue (Macrotask Queue)-dən tapşırıqları götürüb Call Stack-ə əlavə edir.
+🔹 Microtask Queue:
+
+    Burada Microtasks (məsələn, Promise callback-ləri, queueMicrotask(), MutationObserver) saxlanılır.
+    Call Stack boşaldıqdan sonra ilk olaraq bu tapşırıqlar icra edilir.
+
+🔹 Macrotask Queue (Callback Queue):
+
+    Burada Macrotasks (məsələn, setTimeout, setInterval, setImmediate, I/O əməliyyatları) saxlanılır.
+    Microtask Queue tam icra edildikdən sonra buradan tapşırıqlar Call Stack-ə ötürülür.
+
+🔹 Event Loop:
+
+    Call Stack boş olduqda, Event Loop əvvəlcə Microtask Queue-dəki bütün tapşırıqları icra edir.
+    Daha sonra Macrotask Queue-dən bir tapşırıq götürüb Call Stack-ə əlavə edir və prosesi təkrarlayır.
 
 ```js
 console.log('Start');
